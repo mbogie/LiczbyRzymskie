@@ -3,12 +3,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Podaj dwie liczby rzymskie do dodania");
-        Scanner sc = new Scanner(System.in);
-        String licz1 = sc.nextLine();
-        String licz2 = sc.nextLine();
-
         Utils utils = new Utils();
+        Scanner sc = new Scanner(System.in);
+        String licz1;
+
+        do {
+            System.out.println("Podaj pierwsza liczbę rzymska: ");
+            licz1 = sc.nextLine();
+        } while(!utils.sprawdzenie(licz1));
+
+        String licz2;
+        do {
+            System.out.println("Podaj druaga liczbę rzymska: ");
+            licz2 = sc.nextLine();
+        } while(!utils.sprawdzenie(licz2));
+
         int licz1dz = utils.rzymskieDoDziesietnych(licz1);
         int licz2dz = utils.rzymskieDoDziesietnych(licz2);
 
