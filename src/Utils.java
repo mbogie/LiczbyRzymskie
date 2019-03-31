@@ -28,19 +28,43 @@ public class Utils {
                     dziesietna+=500;
                     break;
                 case 'C':
-                    dziesietna+=100;
+                    if (i<liczba.length()-1 && liczba.charAt(i+1)=='D'){
+                        i++;
+                        dziesietna+=400;
+                        break;
+                    }else if (i<liczba.length()-1 && liczba.charAt(i+1)=='M'){
+                        i++;
+                        dziesietna+=900;
+                        break;
+                    }else dziesietna+=100;
                     break;
                 case 'L':
                     dziesietna+=50;
                     break;
                 case 'X':
-                    dziesietna+=10;
+                    if (i<liczba.length()-1 && liczba.charAt(i+1)=='L'){
+                        i++;
+                        dziesietna+=40;
+                        break;
+                    }else if (i<liczba.length()-1 && liczba.charAt(i+1)=='C'){
+                        i++;
+                        dziesietna+=90;
+                        break;
+                    }else dziesietna+=10;
                     break;
                 case 'V':
                     dziesietna+=5;
                     break;
                 case 'I':
-                    dziesietna+=1;
+                    if (i<liczba.length()-1 && liczba.charAt(i+1)=='V'){
+                        i++;
+                        dziesietna+=4;
+                        break;
+                    }else if (i<liczba.length()-1 && liczba.charAt(i+1)=='X'){
+                        i++;
+                        dziesietna+=9;
+                        break;
+                    }else dziesietna+=1;
                     break;
             }
         }

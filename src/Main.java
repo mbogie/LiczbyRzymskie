@@ -25,7 +25,7 @@ public class Main {
 
         String sumaRzymska = utils.dziesietneDoRzymskich(suma);
 
-        System.out.println("Suma cyfr \""+licz1+"\"("+licz1dz+") i \""+licz2+"\"("+licz2dz+") wynosi:");
+        System.out.println("Suma cyfr \""+licz1.toUpperCase()+"\"("+licz1dz+") i \""+licz2.toUpperCase()+"\"("+licz2dz+") wynosi:");
         System.out.println(sumaRzymska+"("+suma+")");
     }
 }
