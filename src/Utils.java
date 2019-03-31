@@ -74,46 +74,78 @@ public class Utils {
     public String dziesietneDoRzymskich(int suma){
         String rzymska = "";
 
+        //przedział > 1000
         for (int i = 0; i < (suma/1000); i++) {
             rzymska+="M";
         }
+
+        //przedział 999>x>100
         suma=suma%1000;
-
-        for (int i = 0; i < (suma/500); i++) {
+        int sumaTmp = (suma/100);
+        if(sumaTmp==9){
+            rzymska+="CM";
+            suma-=900;
+            sumaTmp-=9;
+        }else if(sumaTmp==4){
+            rzymska+="CD";
+            suma-=400;
+            sumaTmp-=4;
+        }else if(5<=sumaTmp && sumaTmp<9){
             rzymska+="D";
+            suma-=500;
+            sumaTmp-=5;
         }
-        suma=suma%500;
-
-        for (int i = 0; i < (suma/100); i++) {
+        for (int i = 0; i < (sumaTmp); i++) {
             rzymska+="C";
         }
+
+        //przedział 99>x>10
         suma=suma%100;
-
-        for (int i = 0; i < (suma/50); i++) {
+        sumaTmp = (suma/10);
+        if(sumaTmp==9){
+            rzymska+="XC";
+            suma-=90;
+            sumaTmp-=9;
+        }else if(sumaTmp==4){
+            rzymska+="XL";
+            suma-=40;
+            sumaTmp-=4;
+        }else if(5<=sumaTmp && sumaTmp<9){
             rzymska+="L";
+            suma-=50;
+            sumaTmp-=5;
         }
-        suma=suma%50;
-
-        for (int i = 0; i < (suma/10); i++) {
+        for (int i = 0; i < (sumaTmp); i++) {
             rzymska+="X";
         }
+
+        // przedział <10
         suma=suma%10;
-
-            if(suma==9){
-                rzymska+="IX";
-                suma =0;
-            }else if(suma==4){
-                rzymska+="IV";
-                suma=0;
-            }else if(suma==5){
-                rzymska+="V";
-                suma=suma%5;
-            }
-
-            for (int i = 0; i < (suma); i++) {
-                    rzymska+="I";
-            }
+        if(suma==9){
+            rzymska+="IX";
+            suma =0;
+        }else if(suma==4){
+            rzymska+="IV";
+            suma=0;
+        }else if(5<=suma && suma<9){
+            rzymska+="V";
+            suma-=5;
+        }
+        for (int i = 0; i <suma; i++) {
+            rzymska+="I";
+        }
 
         return rzymska;
+    }
+    public void show(){
+        System.out.println("\n----------");
+        System.out.println("I - 1");
+        System.out.println("V - 5, IV - 4");
+        System.out.println("X - 10, IX - 9");
+        System.out.println("L - 50, XL - 40");
+        System.out.println("C - 100, XC - 90");
+        System.out.println("D - 500, CD - 400");
+        System.out.println("M - 1000, CM - 900");
+        System.out.println("----------");
     }
 }

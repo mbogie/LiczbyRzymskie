@@ -6,7 +6,7 @@ public class Main {
         Utils utils = new Utils();
         Scanner sc = new Scanner(System.in);
         String licz1;
-
+        utils.show();
         do {
             System.out.println("Podaj pierwsza liczbę rzymska: ");
             licz1 = sc.nextLine();
@@ -24,7 +24,7 @@ public class Main {
         int suma = licz1dz+licz2dz;
 
         String sumaRzymska = utils.dziesietneDoRzymskich(suma);
-
+        utils.show();
         System.out.println("Suma cyfr \""+licz1.toUpperCase()+"\"("+licz1dz+") i \""+licz2.toUpperCase()+"\"("+licz2dz+") wynosi:");
         System.out.println(sumaRzymska+"("+suma+")");
     }
