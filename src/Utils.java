@@ -99,14 +99,20 @@ public class Utils {
         }
         suma=suma%10;
 
-        for (int i = 0; i < (suma/5); i++) {
-            rzymska+="V";
-        }
-        suma=suma%5;
+            if(suma==9){
+                rzymska+="IX";
+                suma =0;
+            }else if(suma==4){
+                rzymska+="IV";
+                suma=0;
+            }else if(suma==5){
+                rzymska+="V";
+                suma=suma%5;
+            }
 
-        for (int i = 0; i < (suma); i++) {
-            rzymska+="I";
-        }
+            for (int i = 0; i < (suma); i++) {
+                    rzymska+="I";
+            }
 
         return rzymska;
     }
