@@ -68,6 +68,12 @@ public class Utils {
                     break;
             }
         }
+        String temp = dziesietneDoRzymskich(dziesietna);
+        if(liczba.equals(temp)){
+            System.out.println(dziesietna);
+        }else{
+            System.out.println(dziesietna+" (Błędny zapis. Prawidłowy: "+temp+")");
+        }
         return dziesietna;
     }
 
@@ -138,14 +144,11 @@ public class Utils {
         return rzymska;
     }
     public void show(){
-        System.out.println("\n----------");
-        System.out.println("I - 1");
-        System.out.println("V - 5, IV - 4");
-        System.out.println("X - 10, IX - 9");
-        System.out.println("L - 50, XL - 40");
-        System.out.println("C - 100, XC - 90");
-        System.out.println("D - 500, CD - 400");
-        System.out.println("M - 1000, CM - 900");
-        System.out.println("----------");
+        System.out.println("---------------");
+        System.out.println("M - 1000, C - 100, X - 10, I - 1");
+        System.out.println("CM - 900, XC - 90, IX - 9");
+        System.out.println("D - 500, L - 50, V - 5, ");
+        System.out.println("CD - 400, XL - 40, IV - 4");
+        System.out.println("---------------");
     }
 }
